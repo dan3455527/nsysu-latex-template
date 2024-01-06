@@ -1,0 +1,57 @@
+\documentclass[12pt, twoside, openright]{book}
+
+\input{packages}
+
+\begin{document}
+	% cover page
+	\input{frontpages/cover.tex}
+	
+	% validation letter page
+	\pagenumbering{roman}
+	\input{frontpages/validation_letter.tex}
+
+	% acknowledgment page
+	\input{frontpages/acknowledgement.tex}
+	
+	% chinese abstract
+	\input{frontpages/chi_abstract.tex}
+	
+	% english abstract
+	\input{frontpages/en_abstract.tex}
+	
+	% table of contents
+	\tableofcontents
+	\watermark
+	\clearpage
+	
+	% table of figures
+	\listoffigures
+	\clearpage
+	
+	% table of tables
+	\listoftables
+	\let \cleardoublepage \clearpage
+
+	% main body section
+	\mainmatter
+	% introduction
+	\input{sections/introduction.tex}
+	
+	% related work
+	\input{sections/related_work.tex}
+	
+	% method
+	\input{sections/method.tex}
+	
+	% experiments
+	\input{sections/experiments.tex}
+
+	% conclusion
+	\input{sections/conclusion.tex}
+	
+	% Reference
+	\input{backpages/bibliography.tex}
+
+	% Appendix
+	\input{backpages/appendix.tex}
+\end{document}

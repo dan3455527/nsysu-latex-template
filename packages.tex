@@ -1,0 +1,155 @@
+\usepackage{booktabs}
+\usepackage{titletoc}
+\usepackage{tocloft}
+\usepackage{zhnumber}
+\usepackage{zhlipsum}
+\usepackage[font=small]{caption}
+
+\contentsmargin{0pt}
+\renewcommand\contentspage{\thecontentspage}
+
+\dottedcontents{section}[2.3em]{}{2.3em}{5pt}
+\dottedcontents{subsection}[5.5em]{}{3.2em}{5pt}
+
+
+\titlecontents*{chapter}
+[0pt]
+{}
+{\bfseries\chaptername\ \thecontentslabel\quad}
+{}
+{\bfseries\dotfill\contentspage\\\vspace{0mm}}
+
+\titlecontents*{section}
+[0pt]
+{}
+{\bfseries\ \thecontentslabel\quad}
+{}
+{\bfseries\dotfill\contentspage\\\vspace{0mm}}
+
+\titlecontents*{subsection}
+[0pt]
+{}
+{\hspace{2em}\bfseries\ \thecontentslabel\quad}
+{}
+{\bfseries\dotfill\contentspage\\\vspace{0mm}}
+
+
+\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+\addtocontents{lof}{\protect\noaddvspace}
+\addtocontents{lof}{\linespread{1}\selectfont}
+\addtocontents{lot}{\protect\noaddvspace}
+\addtocontents{lot}{\linespread{1}\selectfont}
+
+% Font setting
+\usepackage{xeCJK}
+\usepackage{ctex}
+\setmainfont{Times New Roman}
+\setCJKmainfont[AutoFakeBold=true]{標楷體} % On overleaf use AR PL KaitiM Big5
+\setCJKmonofont[AutoFakeBold=true]{標楷體} % On overleaf use AR PL KaitiM Big5
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+%% for sections
+\usepackage{mfirstuc}
+
+%% for images
+\usepackage{graphicx}
+\graphicspath{ {Images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\renewcommand{\figurename}{圖}
+
+%%table
+\renewcommand{\tablename}{表}
+
+%%  for paper size and margins
+\usepackage[a4paper,top=2.54cm,bottom=2.54cm, left=3cm, right=3cm]{geometry}
+
+
+%% for paragraph
+%paragraph indentation
+\usepackage{indentfirst}
+\setlength{\parindent}{4em} 
+
+%paragraph spacing
+\setlength{\parskip}{1em}
+
+%Line spacing
+\renewcommand{\baselinestretch}{2}
+
+%% for font size
+\usepackage{setspace}
+\usepackage{blindtext}
+\newcommand{\bigsize}{\fontsize{16pt}{20pt}\selectfont}
+\newcommand{\chinnesesize}{\fontsize{18pt}{20pt}\selectfont}
+
+%% for header and footer
+\usepackage{blindtext}
+\pagestyle{plain}
+
+
+%% for references
+\usepackage[square,numbers]{natbib}
+\renewcommand{\bibsection}{}
+
+%% for chapter title
+\usepackage{titlesec}
+\renewcommand{\chaptername}{}
+\renewcommand{\thechapter}{第\chinese{chapter}章}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+
+\usepackage{titlesec}
+\titleformat{\chapter}{\center\Large\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}
+{0pt}{0pt}{0pt}
+\titlespacing*{\section}
+{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}
+{0pt}{0pt}{0pt}
+
+%TOC
+\renewcommand{\contentsname}{\hfill\bfseries\LARGE \textbf{目\hspace{1em}錄} \hfill}
+\renewcommand{\cftaftertoctitle}{\hfill}
+%TOF
+\renewcommand{\listfigurename}{\hfill\bfseries\LARGE 圖\hspace{1em}次 \hfill}
+\addtolength{\cftfignumwidth}{30pt}
+\DeclareCaptionListFormat{figprefix}{#1\figurename~#2}
+\captionsetup[figure]{listformat=figprefix}
+\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
+%TOT
+\renewcommand{\listtablename}{\hfill\bfseries\LARGE 表\hspace{1em}次 \hfill}
+\addtolength{\cfttabnumwidth}{30pt}
+\DeclareCaptionListFormat{tabprefix}{#1\tablename~#2}
+\captionsetup[table]{listformat=tabprefix}
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} 
+
+
+%%For background image
+\usepackage[pages=some,scale=1,angle=0,opacity=1.0]{background}
+\newcommand\BackImage[2][scale=1]{%
+	\BgThispage
+	\backgroundsetup{
+		contents={\includegraphics[#1]{#2}}
+	}
+}
+
+
+%% Algorithm    
+\usepackage{algorithmic}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+\usepackage{algorithm}
+\renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
+% \usepackage[linesnumbered,ruled,vlined,algochapter]{algorithm2e}
+\usepackage{varioref}
+\usepackage{hyperref}
+
+
+%% Math Set Symbol
+\usepackage{newtxmath}
+
+%% custom alias
+\newcommand{\watermark}{\BackImage[trim=0 +12cm 0 0, width=15.5em]{watermark.jpg}}
+\newcommand{\zhblidtext}{\zhlipsum[1][name=trad]}
