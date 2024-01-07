@@ -3,17 +3,21 @@
 
 Nsysu thesis Latex Template with latex environment and vscode easy setup. this docker environments has Times New Roamn and 標楷體 pre-installed. No more worries about compiling on different OS system. (Mac, Windows, Linux, Overleaf)
 ![pdf screenshot](Images/pdf_screenshot.png)
+
 # latex環境簡易建置
 - requirements: `docker`, `vscode` 
-1. 下載docker latex環境image，並建立container.
+1. 利用下面的指令輸入至terminal以下載docker的latex環境image，並建立container. [docker image 連結](https://hub.docker.com/r/chengyouhu/latex)
 ```shell
 docker pull chengyouhu/latex:v5
-docke run -d --name [container name] chengyouhu/latex:v5 -v [local latex dir path]:/home/latex
+docker run -itd --name [container name] -v [local latex dir path]:/home/latex chengyouhu/latex:v5 
 ```
 [local latex dir path]就是`git clone`下來後專案資料夾的路徑。這樣可以將自己電腦端的專案資料夾跟container中的`/home/latex`連結。
-2. 安裝vscode docker擴充程式
-3. 側邊欄選擇docker，進container，看到建立的container後右鍵選attach vscode，這樣vscode就進latex環境了，開啟資料夾選擇剛剛設立的`/home/latex`。
-4. 在container環境的vscode安裝latex, latex workshop擴充程式
+
+2. 在local電腦安裝vscode docker擴充程式以及Remote Developments擴充程式
+
+3. 側邊欄選擇docker，進container，看到建立的container後右鍵選attach vscode，這樣vscode就進latex環境了，在進到container環境的vscode介面開啟資料夾選擇`/home`。
+
+4. 在container環境的vscode安裝latex, latex workshop vscode-pdf等擴充程式
 
 ## .vscode設置
 `.vscode`檔案夾需要在當前工作環境內才可運作，若當前工作環境沒有`.vscode`預設會在`/home/.vscode`中。`settings.json`中，三個recipe可以調換順序，最上面的是預設的compiler，若沒有使用參考文獻則須將`"xelatex"`的組別移動到最上。
