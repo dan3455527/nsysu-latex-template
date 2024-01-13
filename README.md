@@ -1,6 +1,8 @@
 # NSYSU-國立中山大學 Latex 模板 (附docker latex編輯環境)
 國立中山大學碩士論文Latex模板，附有latex環境與vscode建置流程。該環境已預先設置Times New Roman與標楷體兩種通用字型，不論是在Mac, Windows, 都不用擔心遇到字型衝突。Overleaf上編輯則需將字體改為`AR PL KaitiM Big5`。
 
+[Overleaf Template link](https://www.overleaf.com/latex/templates/guo-li-zhong-shan-da-xue-nsysu-shuo-shi-lun-wen-mo-ban/pjkwmbnnndyd)
+
 Nsysu thesis Latex Template with latex environment and vscode easy setup. this docker environments has Times New Roamn and 標楷體 pre-installed. No more worries about compiling on different OS system. (Mac, Windows, Linux, Overleaf)
 ![pdf screenshot](Images/pdf_screenshot.png)
 
