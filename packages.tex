@@ -90,6 +90,12 @@
 
 %% for references
 \usepackage[square,numbers]{natbib}
+\usepackage{etoolbox}
+
+\apptocmd{\thebibliography}{\setlength{\parskip}{0pt}}{}{}
+\apptocmd{\thebibliography}{\setlength{\itemsep}{0pt plus 0.3ex}}{}{}
+\apptocmd{\thebibliography}{\setlength{\baselineskip}{25pt}}{}{}
+
 \renewcommand{\bibsection}{}
 
 %% for chapter title
@@ -107,7 +113,8 @@
 {0pt}{0pt}{0pt}
 \titlespacing*{\subsection}
 {0pt}{0pt}{0pt}
-
+\titlespacing*{\subsubsection}
+{0pt}{0pt}{0pt}
 %TOC
 \renewcommand{\contentsname}{\hfill\bfseries\LARGE \textbf{目\hspace{1em}錄} \hfill}
 \renewcommand{\cftaftertoctitle}{\hfill}
